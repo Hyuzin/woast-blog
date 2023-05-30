@@ -7,7 +7,6 @@ import cors from "cors";
 import multer from "multer";
 
 const app = express();
-const PORT = 3002;
 
 const corsOptions = {
   origin: "http://woast-blog-production.up.railway.app",
@@ -42,6 +41,6 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
 
-app.listen(PORT, () => {
-  console.log("Server connected on port 3002");
+app.listen(process.env.PORT, () => {
+  console.log(`Server connected on port ${process.env.PORT}`);
 });
