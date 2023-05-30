@@ -5,17 +5,33 @@ import userRoutes from "./routes/users.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import multer from "multer";
+import { db } from "./db.js";
 
 const app = express();
 
 const corsOptions = {
-  origin: "http://woast-blog-production.up.railway.app",
+  origin: "https://woast-blog-production.up.railway.app",
   credentials: true,
 };
 
 app.use(cors(corsOptions));
 app.use(cookieParser());
 app.use(express.json());
+
+db.connect((err) => {
+  if (err) throw err;
+  console.log('Database Connected')
+})
+
+app.get('/db', (req, res) => {
+  db.query('SELECT 1', (err) => {
+    if (err) {
+      res.status(500).json({message: "Database connected"})
+    } else{
+      res.json({message: "Database connected"})
+    }
+  })
+})
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
