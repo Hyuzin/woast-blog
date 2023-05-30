@@ -57,6 +57,11 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Credentials', 'true');
+  next();
+});
+
 app.listen(process.env.PORT, () => {
   console.log(`Server connected on port ${process.env.PORT}`);
 });
