@@ -14,7 +14,7 @@ export const Other = ({ cat }) => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3002/api/posts/?cat=${cat}`
+          `http://woast-blog-production.up.railway.app/api/posts/?cat=${cat}`
         );
         setPosts(response.data);
       } catch (err) {
