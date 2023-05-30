@@ -10,7 +10,7 @@ import { db } from "./db.js";
 const app = express();
 
 const corsOptions = {
-  origin: ["https://woast-blog-production.up.railway.app", true],
+  origin: "https://woast-blog-production.up.railway.app",
   credentials: true,
 };
 
