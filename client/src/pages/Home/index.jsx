@@ -13,7 +13,7 @@ export const HomePage = () => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get(
-          `woast-blog-production.up.railway.app/api/posts${cat}`
+          `http://woast-blog-production.up.railway.app/api/posts${cat}`
         );
         setPosts(response.data);
       } catch (err) {

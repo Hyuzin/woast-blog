@@ -10,7 +10,7 @@ const app = express();
 const PORT = 3002;
 
 const corsOptions = {
-  origin: true,
+  origin: 'http://woast-blog-production.up.railway.app',
   credentials: true,
 }
 

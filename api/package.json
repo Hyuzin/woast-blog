@@ -20,5 +20,5 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "proxy": "woast-blog-production.up.railway.app/api/"
+  "proxy": "http://woast-blog-production.up.railway.app/api/"
 }

@@ -18,7 +18,7 @@ const DetailBlog = () => {
     const fetchPost = async () => {
       try {
         const response = await axios.get(
-          `woast-blog-production.up.railway.app/api/posts/${postId}`
+          `http://woast-blog-production.up.railway.app/api/posts/${postId}`
         );
         setPost(response.data);
       } catch (err) {
@@ -30,7 +30,7 @@ const DetailBlog = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`woast-blog-production.up.railway.app/api/posts/${postId}`, {
+      await axios.delete(`http://woast-blog-production.up.railway.app/api/posts/${postId}`, {
         withCredentials: true,
         credentials: "include",
       });
