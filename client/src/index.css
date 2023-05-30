@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+  @apply text-3xl;
+}
+h2 {
+  @apply text-2xl;
+}
+ul {
+  @apply list-disc list-inside text-lg;
+}
+li {
+  @apply pl-5;
+}
+ol {
+  @apply list-decimal list-inside text-lg;
+}
+p {
+  @apply break-words text-lg;
+}
+code {
+  @apply bg-gray-200 px-1;
+}
+blockquote {
+  @apply p-4 my-4 border-l-4 border-gray-300 bg-gray-100;
+}
