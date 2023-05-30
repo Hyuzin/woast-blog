@@ -63,7 +63,7 @@ const CreateBlog = () => {
       const formData = new FormData();
       formData.append("file", file);
       const res = await axios.post(
-        "http://woast-blog-production.up.railway.app/api/upload",
+        "https://woast-blog-production.up.railway.app/api/upload",
         formData
       );
       console.log(res.data);
@@ -80,7 +80,7 @@ const CreateBlog = () => {
     try {
       state
         ? await axios.put(
-            `http://woast-blog-production.up.railway.app/api/posts/${state.id}`,
+            `https://woast-blog-production.up.railway.app/api/posts/${state.id}`,
             {
               title,
               desc: content,
@@ -90,7 +90,7 @@ const CreateBlog = () => {
             { withCredentials: true, credentials: "include" }
           )
         : await axios.post(
-            `http://woast-blog-production.up.railway.app/api/posts/`,
+            `https://woast-blog-production.up.railway.app/api/posts/`,
             {
               title,
               desc: content,

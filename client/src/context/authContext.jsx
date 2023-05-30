@@ -11,14 +11,14 @@ export const AuthContextProvider = ({ children }) => {
 
   const register = async(inputs) => {
     await axios.post(
-      `http://woast-blog-production.up.railway.app/api/auth/register`,
+      `https://woast-blog-production.up.railway.app/api/auth/register`,
       inputs
     );
     await login(inputs);
   }
   const login = async (inputs) => {
     const res = await axios.post(
-      "http://woast-blog-production.up.railway.app/api/auth/login",
+      "https://woast-blog-production.up.railway.app/api/auth/login",
       inputs,
       { withCredentials: true, credentials: "include" }
     );
@@ -27,7 +27,7 @@ export const AuthContextProvider = ({ children }) => {
 
   const logout = async () => {
     await axios.post(
-      "http://woast-blog-production.up.railway.app/api/auth/logout",
+      "https://woast-blog-production.up.railway.app/api/auth/logout",
       {},
       {
         withCredentials: true,
